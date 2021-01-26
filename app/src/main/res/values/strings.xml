@@ -1,0 +1,49 @@
+<resources>
+    <string name="app_name">Checkin</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="last_name">Họ và tên đệm</string>
+    <string name="first_name">Tên</string>
+
+    <string name="menu_scan">Scan QR</string>
+    <string name="menu_history">Lịch sử</string>
+    <string name="menu_feedback">Góp ý</string>
+    <string name="menu_review">Đánh giá</string>
+    <string name="menu_account">Tài khoản</string>
+
+    <string name="scan_title">Scan QR</string>
+    <string name="scan_student_id">Mã sinh viên</string>
+    <string name="scan_next">Tiếp theo</string>
+    <string name="scan_confirm">Xác nhận</string>
+    <string name="scan_subject">Môn / Học phần</string>
+    <string name="scan_class">Lớp</string>
+    <string name="scan_lesson_number">Buổi học số</string>
+    <string name="scan_check_in">Điểm danh</string>
+    <string name="scan_check_in_success">Điểm danh thành công</string>
+    <string name="scan_check_in_success_description">Chúc mừng bạn đã điểm danh thành công buổi học số 01</string>
+    <string name="scan_check_in_success_button">OK</string>
+
+    <string name="history_title">Lịch sử</string>
+    <string name="history_class_id">Mã lớp</string>
+    <string name="history_lesson_id">Tiết học</string>
+    <string name="history_lesson_available">Đi học</string>
+    <string name="history_lesson_miss">Vắng</string>
+
+    <string name="feedback_title">Góp ý</string>
+
+    <string name="review_title">Đánh giá</string>
+
+    <string name="account_title">Cài đặt</string>
+    <string name="account_birthday">Ngày sinh</string>
+    <string name="account_gender">Giới tính</string>
+    <string name="account_gender_male">Nam</string>
+    <string name="account_gender_female">Nữ</string>
+    <string name="account_logout">Đăng xuất</string>
+    <string name="student_id_key">student_id</string>
+    <string name="student_first_name_key">student_first_name</string>
+    <string name="student_last_name_key">student_last_name</string>
+    <string name="lesson_title">Môn / Học phần</string>
+    <string name="grade_title">Lớp</string>
+    <string name="lesson_number_title">Buổi học số</string>
+</resources>
