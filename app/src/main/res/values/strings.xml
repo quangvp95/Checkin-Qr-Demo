@@ -40,10 +40,18 @@
     <string name="account_gender_male">Nam</string>
     <string name="account_gender_female">Nữ</string>
     <string name="account_logout">Đăng xuất</string>
-    <string name="student_id_key">student_id</string>
-    <string name="student_first_name_key">student_first_name</string>
-    <string name="student_last_name_key">student_last_name</string>
+    <string name="student_id_key">learner_id</string>
+    <string name="student_first_name_key">learner_first_name</string>
+    <string name="student_last_name_key">learner_last_name</string>
     <string name="lesson_title">Môn / Học phần</string>
     <string name="grade_title">Lớp</string>
     <string name="lesson_number_title">Buổi học số</string>
+
+    <string name="checkin_success_dialog_title">Điểm danh thành công</string>
+    <string name="checkin_success_dialog_content">Chúc mừng bạn đã điểm danh thành công buổi học</string>
+    <string name="checkin_success_dialog_button">OK</string>
+    <string name="checkin_fail_dialog_title">Điểm danh thất bại</string>
+    <string name="checkin_fail_dialog_content">Bạn đã điểm danh không thành công, vui lòng điểm danh lại</string>
+    <string name="checkin_fail_dialog_button">Thử lại</string>
+
 </resources>

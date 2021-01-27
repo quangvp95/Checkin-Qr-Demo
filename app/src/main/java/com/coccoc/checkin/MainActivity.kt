@@ -4,15 +4,18 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.camera.core.*
-import androidx.fragment.app.Fragment
-import com.coccoc.checkin.ui.AccountFragment
-import com.coccoc.checkin.ui.HistoryFragment
-import com.coccoc.checkin.ui.ScanFragment
-import com.coccoc.checkin.ui.StudentIdFragment
-import com.google.android.material.bottomnavigation.BottomNavigationView
+import androidx.core.os.bundleOf
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.Observer
+import androidx.navigation.NavController
+import androidx.navigation.ui.setupActionBarWithNavController
+import com.coccoc.checkin.extension.setupWithNavController
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
+
+    private var currentNavController: LiveData<NavController>? = null
+    private lateinit var mNavController: NavController
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,49 +23,43 @@ class MainActivity : AppCompatActivity() {
 
         val sharedPref = getPreferences(Context.MODE_PRIVATE)!!
 //        if (sharedPref.getString(getString(R.string.student_last_name_key),"").isNullOrEmpty())
-        openFragment(StudentIdFragment.newInstance())
 
-        val bottomNavigation: BottomNavigationView = findViewById(R.id.bottomNavigationView)
-        bottomNavigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
+//        val service = ApiService.create()
+//        val call = service.getCheckInHistory()
+
+        if (savedInstanceState == null) {
+            setupBottomNavigationBar()
+        }
     }
 
-    private val mOnNavigationItemSelectedListener =
-        BottomNavigationView.OnNavigationItemSelectedListener { item ->
-            when (item.itemId) {
-                R.id.navigation_scan -> {
-//                    val scanFragment = ScanFragment.newInstance()
-//                    openFragment(scanFragment)
-                    return@OnNavigationItemSelectedListener true
-                }
-                R.id.navigation_history -> {
-                    val historyFragment = HistoryFragment.newInstance()
-                    openFragment(historyFragment)
-                    return@OnNavigationItemSelectedListener true
-                }
-                R.id.navigation_feedback -> {
-                    val accountFragment = AccountFragment.newInstance()
-                    openFragment(accountFragment)
-                    return@OnNavigationItemSelectedListener true
-                }
-                R.id.navigation_review -> {
-                    val accountFragment = AccountFragment.newInstance()
-                    openFragment(accountFragment)
-                    return@OnNavigationItemSelectedListener true
-                }
-                R.id.navigation_account -> {
-                    val accountFragment = AccountFragment.newInstance()
-                    openFragment(accountFragment)
-                    return@OnNavigationItemSelectedListener true
-                }
-            }
-            false
-        }
+    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
+        super.onRestoreInstanceState(savedInstanceState)
+        setupBottomNavigationBar()
+    }
 
-    fun openFragment(fragment: Fragment) {
-        val transaction = supportFragmentManager.beginTransaction()
-        transaction.replace(R.id.container, fragment)
-        transaction.addToBackStack(null)
-        transaction.commit()
+    private fun setupBottomNavigationBar() {
+        val navGraphIds = listOf(
+            R.navigation.navigation_scan,
+            R.navigation.navigation_history,
+            R.navigation.navigation_feedback,
+            R.navigation.navigation_review,
+            R.navigation.navigation_account
+        )
+        val controller = bottomNavigationView.setupWithNavController(
+            navGraphIds,
+            supportFragmentManager,
+            R.id.nav_host_fragment,
+            intent
+        )
+        controller.observe(this, Observer { navController ->
+            mNavController = navController
+            setupActionBarWithNavController(navController)
+        })
+        currentNavController = controller
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        return currentNavController?.value?.navigateUp() ?: false
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -71,14 +68,15 @@ class MainActivity : AppCompatActivity() {
 //        if (requestCode == QR_REQUEST) {
         if (resultCode == RESULT_OK) {
             val info = data!!.getStringExtra(RESULT_QR) ?: return
-            openFragment(ScanFragment.newInstance(info))
+            val bundle = bundleOf(info to info)
+            mNavController.navigate(R.id.action_studentNameFragment_to_scanFragment, bundle)
         }
 //        }
     }
 
     companion object {
-        const val QR_REQUEST = 1001
-        const val RESULT_QR = "result_qr"
+        const val QR_REQUEST = 1001;
+        const val RESULT_QR = "result_qr";
     }
 
 }

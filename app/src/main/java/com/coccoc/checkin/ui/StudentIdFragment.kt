@@ -9,9 +9,11 @@ import android.widget.Button
 import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import com.coccoc.checkin.MainActivity
 import com.coccoc.checkin.R
 import com.google.android.material.textfield.TextInputLayout
+import kotlinx.android.synthetic.main.fragment_student_id.view.*
 
 class StudentIdFragment : Fragment() {
 
@@ -30,8 +32,8 @@ class StudentIdFragment : Fragment() {
         val v = inflater.inflate(R.layout.fragment_student_id, container, false)
         val sharedPref = activity?.getPreferences(Context.MODE_PRIVATE)!!
 
-        mButton = v.findViewById(R.id.bt_student_id_next)
-        mTextId = v.findViewById(R.id.edt_student_id)
+        mButton = v.bt_student_id_next
+        mTextId = v.edt_student_id
 
         mButton.setOnClickListener(View.OnClickListener { _ ->
             with(sharedPref.edit()) {
@@ -39,7 +41,7 @@ class StudentIdFragment : Fragment() {
                 apply()
             }
 
-            (activity as MainActivity).openFragment(StudentNameFragment.newInstance())
+            findNavController().navigate(StudentIdFragmentDirections.actionStudentIdFragmentToStudentNameFragment())
         })
 
         mTextId.editText?.addTextChangedListener(afterTextChanged = {

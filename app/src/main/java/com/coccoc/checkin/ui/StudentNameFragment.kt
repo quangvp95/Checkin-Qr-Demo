@@ -14,6 +14,7 @@ import com.coccoc.checkin.MainActivity
 import com.coccoc.checkin.QrActivity
 import com.coccoc.checkin.R
 import com.google.android.material.textfield.TextInputLayout
+import kotlinx.android.synthetic.main.fragment_student_name.view.*
 
 class StudentNameFragment : Fragment() {
 
@@ -33,9 +34,9 @@ class StudentNameFragment : Fragment() {
         val v = inflater.inflate(R.layout.fragment_student_name, container, false)
         val sharedPref = activity?.getPreferences(Context.MODE_PRIVATE)!!
 
-        mButton = v.findViewById(R.id.bt_student_name_confirm)
-        mTextLastName = v.findViewById(R.id.edt_student_last_name)
-        mTextFirstName = v.findViewById(R.id.edt_student_first_name)
+        mButton = v.bt_student_name_confirm
+        mTextLastName = v.edt_student_last_name
+        mTextFirstName = v.edt_student_first_name
 
         mButton.setOnClickListener { _ ->
             with(sharedPref.edit()) {
@@ -43,10 +44,7 @@ class StudentNameFragment : Fragment() {
                     getString(R.string.student_first_name_key),
                     mTextFirstName.editText?.text.toString()
                 )
-                putString(
-                    getString(R.string.student_last_name_key),
-                    mTextLastName.editText?.text.toString()
-                )
+                putString(getString(R.string.student_last_name_key), mTextLastName.editText?.text.toString())
                 apply()
             }
 
@@ -54,26 +52,14 @@ class StudentNameFragment : Fragment() {
         }
 
         mTextLastName.editText?.addTextChangedListener(afterTextChanged = {
-            mButton.isEnabled =
-                !mTextLastName.editText?.text.isNullOrEmpty() && !mTextFirstName.editText?.text.isNullOrEmpty()
+            mButton.isEnabled = !mTextLastName.editText?.text.isNullOrEmpty() && !mTextFirstName.editText?.text.isNullOrEmpty()
         })
-        mTextLastName.editText?.setText(
-            sharedPref.getString(
-                getString(R.string.student_last_name_key),
-                ""
-            )
-        )
+        mTextLastName.editText?.setText(sharedPref.getString(getString(R.string.student_last_name_key),""))
 
         mTextFirstName.editText?.addTextChangedListener(afterTextChanged = {
-            mButton.isEnabled =
-                !mTextLastName.editText?.text.isNullOrEmpty() && !mTextFirstName.editText?.text.isNullOrEmpty()
+            mButton.isEnabled = !mTextLastName.editText?.text.isNullOrEmpty() && !mTextFirstName.editText?.text.isNullOrEmpty()
         })
-        mTextFirstName.editText?.setText(
-            sharedPref.getString(
-                getString(R.string.student_first_name_key),
-                ""
-            )
-        )
+        mTextFirstName.editText?.setText(sharedPref.getString(getString(R.string.student_first_name_key),""))
 
         return v
     }

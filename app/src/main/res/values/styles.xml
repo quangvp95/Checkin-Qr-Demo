@@ -1,18 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources
+    xmlns:tools="http://schemas.android.com/tools">
 
     <style name="CCTextAppearance" parent="android:TextAppearance" tools:ignore="UnusedResources" />
+
+    <style name="CCTextAppearance.Headline1">
+        <item name="android:textSize">@dimen/cc_text_size_headline1</item>
+        <item name="android:lineSpacingExtra">0sp</item>
+    </style>
+
+    <style name="CCTextAppearance.Headline2">
+        <item name="android:fontFamily">@string/cc_font_family_medium</item>
+        <item name="android:textSize">@dimen/cc_text_size_headline2</item>
+        <item name="android:lineSpacingExtra">0sp</item>
+    </style>
+
+    <style name="CCTextAppearance.Headline3">
+        <item name="android:textSize">@dimen/cc_text_size_headline3</item>
+        <item name="android:lineSpacingExtra">0sp</item>
+    </style>
+
+    <style name="CCTextAppearance.Title">
+        <item name="android:fontFamily">@string/cc_font_family_medium</item>
+        <item name="android:textSize">@dimen/cc_text_size_title</item>
+        <item name="android:lineSpacingExtra">1sp</item>
+    </style>
+
+    <style name="CCTextAppearance.Subtitle1">
+        <item name="android:fontFamily">@string/cc_font_family_medium</item>
+        <item name="android:textSize">@dimen/cc_text_size_subtitle1</item>
+        <item name="android:lineSpacingExtra">1sp</item>
+    </style>
+
+    <style name="CCTextAppearance.Subtitle2">
+        <item name="android:fontFamily">@string/cc_font_family_medium</item>
+        <item name="android:textSize">@dimen/cc_text_size_subtitle2</item>
+        <item name="android:lineSpacingExtra">2sp</item>
+    </style>
+
+    <style name="CCTextAppearance.Body1">
+        <item name="android:textSize">@dimen/cc_text_size_body1</item>
+        <item name="android:lineSpacingExtra">3sp</item>
+    </style>
+
+    <style name="CCTextAppearance.Body2">
+        <item name="android:textSize">@dimen/cc_text_size_body2</item>
+        <item name="android:lineSpacingExtra">2sp</item>
+    </style>
+
+    <style name="CCTextAppearance.Button">
+        <item name="android:fontFamily">@string/cc_font_family_medium</item>
+        <item name="android:textSize">@dimen/cc_text_size_button</item>
+    </style>
+
+    <style name="CCTextAppearance.CaptionLink">
+        <item name="android:fontFamily">@string/cc_font_family_medium</item>
+        <item name="android:textSize">@dimen/cc_text_size_caption_link</item>
+        <item name="android:lineSpacingExtra">2sp</item>
+    </style>
 
     <style name="CCTextAppearance.Caption">
         <item name="android:textSize">@dimen/cc_text_size_caption</item>
         <item name="android:layout_marginTop">@dimen/cc_margin_top_caption</item>
         <item name="android:lineSpacingExtra">2sp</item>
         <item name="android:paddingLeft">4dp</item>
-        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:textColor">@color/cc_primary_color</item>
     </style>
 
-    <style name="CCTextAppearance.Title" parent="CCTextAppearance.Caption">
-        <item name="android:textSize">@dimen/cc_text_size_title</item>
+    <style name="CCTextAppearance.Statistics">
+        <item name="android:fontFamily">@string/cc_font_family_medium</item>
+        <item name="android:textSize">@dimen/cc_text_size_statistics</item>
+        <item name="android:lineSpacingExtra">2sp</item>
+    </style>
+
+    <style name="CCTextAppearance.Title2" parent="CCTextAppearance.Caption">
+        <item name="android:textSize">@dimen/cc_text_size_title2</item>
         <item name="android:textColor">@color/grayscale_color1</item>
     </style>
 

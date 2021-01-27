@@ -9,7 +9,7 @@
     tools:context=".ui.ScanFragment">
 
     <TextView
-        style="@style/CCTextAppearance.Title"
+        style="@style/CCTextAppearance.Title2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/lesson_title" />
@@ -21,7 +21,7 @@
         android:layout_height="wrap_content" />
 
     <TextView
-        style="@style/CCTextAppearance.Title"
+        style="@style/CCTextAppearance.Title2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/grade_title" />
@@ -33,7 +33,7 @@
         android:layout_height="wrap_content" />
 
     <TextView
-        style="@style/CCTextAppearance.Title"
+        style="@style/CCTextAppearance.Title2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/lesson_number_title" />
