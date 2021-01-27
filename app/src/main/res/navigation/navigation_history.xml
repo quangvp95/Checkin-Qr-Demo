@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_history"
+    app:startDestination="@id/courseHistoryFragment">
+
+    <fragment
+        android:id="@+id/courseHistoryFragment"
+        android:name="com.coccoc.checkin.ui.CourseHistoryFragment"
+        android:label="@string/history_title"
+        tools:layout="@layout/fragment_course_history" >
+        <action
+            android:id="@+id/action_courseHistoryFragment_to_lessonHistoryFragment"
+            app:destination="@id/lessonHistoryFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/lessonHistoryFragment"
+        android:name="com.coccoc.checkin.ui.LessonHistoryFragment"
+        android:label="@string/history_title"
+        tools:layout="@layout/fragment_lesson_history" />
+</navigation>

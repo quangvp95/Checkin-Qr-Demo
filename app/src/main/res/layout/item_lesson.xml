@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingHorizontal="16dp"
+    android:paddingVertical="11dp">
+
+    <TextView
+        android:id="@+id/txtLessonId"
+        style="@style/CCTextAppearance.Body1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/grayscale_color1" />
+
+    <TextView
+        android:id="@+id/txtLessonTime"
+        style="@style/CCTextAppearance.Body2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtLessonId"
+        android:textColor="@color/grayscale_color4" />
+
+    <TextView
+        android:id="@+id/txtLessonStatus"
+        style="@style/CCTextAppearance.CaptionLink"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true" />
+
+</RelativeLayout>

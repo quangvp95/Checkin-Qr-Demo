@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?android:attr/selectableItemBackground"
+    android:paddingVertical="11dp"
+    android:paddingHorizontal="16dp">
+
+    <TextView
+        android:id="@+id/txtCourseName"
+        style="@style/CCTextAppearance.Body1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/grayscale_color1" />
+
+    <TextView
+        android:id="@+id/txtCourseId"
+        style="@style/CCTextAppearance.Body2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtCourseName"
+        android:textColor="@color/grayscale_color4" />
+
+    <ImageView
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:scaleType="center"
+        android:src="@drawable/ic_view_detail" />
+
+</RelativeLayout>

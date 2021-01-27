@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:targetApi="m">
+    <item
+        android:width="360dp"
+        android:height="640dp"
+        android:drawable="@drawable/ic_dark_overlay" />
+    <item
+        android:width="204dp"
+        android:height="204dp"
+        android:bottom="218dp"
+        android:drawable="@drawable/ic_focus"
+        android:left="78dp"
+        android:right="78dp"
+        android:top="218dp" />
+</layer-list>
